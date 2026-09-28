@@ -117,7 +117,7 @@ export default function CTA() {
       </div>
 
       <div className="shell relative">
-        <SectionMeta num="06" label="Join Us" align="center" className="justify-center" />
+              <SectionMeta num="08" label="Join Us" align="center" className="justify-center" />
 
         <div className="mx-auto mt-10 max-w-4xl text-center">
           <SplitHeading

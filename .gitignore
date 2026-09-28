@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Source photos kept out of the build and the repo
+gallery-originals
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

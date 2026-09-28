@@ -1,0 +1,42 @@
+export const snapshots = [
+  {
+    id: "01",
+    image: "/grid/01.jpg",
+    title: "GDGOC WIT Solapur — photo 1",
+    orientation: "landscape",
+    accent: "blue",
+    icon: "Sparkles",
+  },
+  {
+    id: "02",
+    image: "/grid/02.jpg",
+    title: "GDGOC WIT Solapur — photo 2",
+    orientation: "landscape",
+    accent: "red",
+    icon: "Code",
+  },
+  {
+    id: "03",
+    image: "/grid/03.jpg",
+    title: "GDGOC WIT Solapur — photo 3",
+    orientation: "landscape",
+    accent: "yellow",
+    icon: "Users",
+  },
+  {
+    id: "04",
+    image: "/grid/04.jpg",
+    title: "GDGOC WIT Solapur — photo 4",
+    orientation: "portrait",
+    accent: "green",
+    icon: "Rocket",
+  },
+  {
+    id: "05",
+    image: "/grid/05.jpg",
+    title: "GDGOC WIT Solapur — photo 5",
+    orientation: "portrait",
+    accent: "blue",
+    icon: "Terminal",
+  },
+];

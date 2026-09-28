@@ -5,8 +5,10 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import WhatWeDo from "./components/WhatWeDo";
 import Team from "./components/Team";
+import Gallery from "./components/Gallery";
 import PastEvents from "./components/PastEvents";
 import UpcomingEvents from "./components/UpcomingEvents";
+import Snapshots from "./components/Snapshots";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import { ScrollTrigger } from "./lib/gsap";
@@ -51,8 +53,10 @@ export default function App() {
         <About />
         <WhatWeDo />
         <Team />
+        <Gallery />
         <PastEvents />
         <UpcomingEvents />
+        <Snapshots />
         <CTA />
       </main>
 

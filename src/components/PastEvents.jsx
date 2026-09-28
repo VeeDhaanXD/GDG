@@ -20,7 +20,7 @@ export default function PastEvents() {
       <div className="shell shrink-0 pt-20 lg:pt-[84px]">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <SectionMeta num="04" label="Past Events" />
+            <SectionMeta num="05" label="Past Events" />
             <SplitHeading
               as="h2"
               id="past-title"

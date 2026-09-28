@@ -1,0 +1,32 @@
+export const gallery = [
+  {
+    id: "01",
+    image: "/gallery/01.jpg",
+    category: "Workshops",
+    title: "Hands on the keyboards",
+    note: "Small groups, one problem, real code.",
+    accent: "blue",
+    icon: "Code",
+    fit: "50% 50%",
+  },
+  {
+    id: "02",
+    image: "/gallery/02.jpg",
+    category: "Community",
+    title: "Between the sessions",
+    note: "The conversations that start in the hallway.",
+    accent: "yellow",
+    icon: "Users",
+    fit: "50% 30%",
+  },
+  {
+    id: "03",
+    image: "/gallery/03.jpg",
+    category: "Showcase",
+    title: "What got built",
+    note: "Demos, walkthroughs and a lot of questions.",
+    accent: "green",
+    icon: "Sparkles",
+    fit: "50% 30%",
+  },
+];

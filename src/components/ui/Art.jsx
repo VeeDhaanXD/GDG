@@ -141,6 +141,61 @@ export function Portrait({ member, className = "" }) {
 }
 
 /**
+ * Gallery tile artwork. Renders `item.image` when present and falls back to a
+ * generated plate so the grid still reads as designed before photos land.
+ */
+export function GalleryPlate({ item, className = "" }) {
+  const accent = ACCENT[item.accent] || ACCENT.blue;
+  const [failed, setFailed] = useState(false);
+
+  if (item.image && !failed) {
+    return (
+      <img
+        src={item.image}
+        alt={item.title}
+        loading="lazy"
+        decoding="async"
+        onError={() => setFailed(true)}
+        style={{ objectPosition: item.fit || "50% 50%" }}
+        className={`h-full w-full object-cover ${className}`}
+      />
+    );
+  }
+
+  return (
+    <div
+      className={`relative h-full w-full overflow-hidden ${className}`}
+      role="img"
+      aria-label={`${item.title} — photo coming soon`}
+    >
+      <div
+        className="absolute inset-0"
+        style={{
+          background: `radial-gradient(120% 100% at 14% 10%, ${accent.hex}55 0%, transparent 58%), radial-gradient(95% 90% at 90% 95%, ${accent.deep} 0%, transparent 64%), linear-gradient(155deg, #0d101a 0%, #07080f 100%)`,
+        }}
+      />
+      <div className="bg-grid absolute inset-0 opacity-40" />
+      <div
+        aria-hidden="true"
+        className="absolute -right-14 -top-14 h-56 w-56 rounded-full blur-3xl"
+        style={{ background: accent.hex, opacity: 0.26 }}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute -bottom-16 -left-16 h-52 w-52 rounded-full blur-3xl"
+        style={{ background: accent.deep, opacity: 0.55 }}
+      />
+
+      <Icon
+        name={item.icon}
+        className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 opacity-[0.16] sm:h-28 sm:w-28 lg:h-32 lg:w-32"
+        strokeWidth={1}
+      />
+    </div>
+  );
+}
+
+/**
  * Abstract "poster" used for event imagery.
  * Set `event.image` to a real photo URL to use an <img> instead.
  */
