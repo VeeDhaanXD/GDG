@@ -47,7 +47,7 @@ export default function Gallery() {
       <div className="shell relative">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <SectionMeta num="06" label="Gallery" />
+            <SectionMeta num="07" label="Gallery" />
             <SplitHeading
               as="h2"
               id="gallery-title"

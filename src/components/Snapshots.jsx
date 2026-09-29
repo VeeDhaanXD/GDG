@@ -80,7 +80,7 @@ export default function Snapshots() {
       <div className="shell relative">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <SectionMeta num="08" label="Snapshots" />
+            <SectionMeta num="09" label="Snapshots" />
             <SplitHeading
               as="h2"
               id="snapshots-title"

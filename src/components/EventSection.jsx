@@ -16,7 +16,10 @@ function MediaTile({ item, event, index }) {
   const broken = failed || !item;
 
   return (
-    <figure data-event-tile className={TILE}>
+    <figure
+      data-event-tile
+      className={`${TILE} ${event.highlight ? "border-white/25 shadow-[0_0_0_1px_rgba(234,67,53,0.35)]" : ""}`}
+    >
       {broken ? (
         <GalleryPlate
           item={{
@@ -80,11 +83,18 @@ function CaptionTile({ event }) {
   return (
     <div data-event-tile className={`${TILE} flex flex-col justify-between p-6 sm:p-7`}>
       <div className="flex items-center justify-between gap-3">
-        <span
-          className="rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em]"
-          style={{ color: accent.hex, background: `${accent.hex}1f` }}
-        >
-          {event.category}
+        <span className="flex flex-wrap items-center gap-2">
+          <span
+            className="rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em]"
+            style={{ color: accent.hex, background: `${accent.hex}1f` }}
+          >
+            {event.category}
+          </span>
+          {event.highlight && (
+            <span className="rounded-full border border-white/20 bg-white/[0.06] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/80">
+              ★ Highlighted
+            </span>
+          )}
         </span>
         <span className="font-display text-[11px] tracking-[0.2em] text-white/30">
           {event.num}
@@ -151,6 +161,25 @@ export default function EventSection({ event, index }) {
           background: `radial-gradient(55% 70% at ${flipped ? "85%" : "15%"} 0%, ${accent.hex}22, transparent 70%)`,
         }}
       />
+      {event.highlight && (
+        <>
+          <span
+            aria-hidden="true"
+            className="animate-border-flow pointer-events-none absolute inset-x-0 top-0 z-10 h-[3px]"
+            style={{
+              backgroundImage:
+                "linear-gradient(90deg, #ea4335, #fbbc04, #4285f4, #34a853, #ea4335)",
+            }}
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 top-0 h-[70vh] opacity-70"
+            style={{
+              background: `radial-gradient(60% 65% at ${flipped ? "80%" : "20%"} 0%, ${accent.hex}33, transparent 72%)`,
+            }}
+          />
+        </>
+      )}
 
       <div className="shell relative">
         <div
@@ -160,6 +189,19 @@ export default function EventSection({ event, index }) {
         >
           <div className={flipped ? "sm:text-right" : ""}>
             <SectionMeta num={event.num} label={event.label} align={flipped ? "right" : "left"} />
+            {event.highlight && (
+              <p className="mt-6">
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.05] px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/85 backdrop-blur-md">
+                  <span className="relative flex h-1.5 w-1.5">
+                    <span
+                      className="animate-pulse-dot absolute inline-flex h-full w-full rounded-full"
+                      style={{ background: accent.hex }}
+                    />
+                  </span>
+                  ★ Highlighted event
+                </span>
+              </p>
+            )}
             <SplitHeading
               as="h2"
               id={`${event.id}-title`}

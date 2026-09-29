@@ -35,8 +35,8 @@ export const eventSections = [
   {
     id: "ml-workshop",
     num: "04",
-    label: "ML Workshop",
-    title: ["ML", "Workshop."],
+    label: "The First Commit",
+    title: ["The", "First Commit"],
     category: "Workshop",
     accent: "yellow",
     icon: "Cpu",
@@ -46,6 +46,23 @@ export const eventSections = [
     media: [
       { type: "image", src: "/ML/IMG_6372.JPG" },
       { type: "image", src: "/ML/IMG_6412.JPG" },
+    ],
+  },
+  {
+    id: "swags",
+    num: "05",
+    label: "Cloud Arcade Swags Distribution",
+    title: ["Cloud Arcade", "Swags."],
+    category: "Giveaway",
+    accent: "red",
+    icon: "Gift",
+    highlight: true,
+    description:
+      "The swag drop for the Google Cloud Arcade challenge — merch, stickers and a lot of photos from the giveaway table.",
+    note: "Highlighted event · Photos from the drop",
+    media: [
+      { type: "image", src: "/Swags/s1.JPG" },
+      { type: "image", src: "/Swags/s2.JPG" },
     ],
   },
 ];
