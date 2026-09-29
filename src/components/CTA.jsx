@@ -117,7 +117,7 @@ export default function CTA() {
       </div>
 
       <div className="shell relative">
-              <SectionMeta num="08" label="Join Us" align="center" className="justify-center" />
+              <SectionMeta num="09" label="Join Us" align="center" className="justify-center" />
 
         <div className="mx-auto mt-10 max-w-4xl text-center">
           <SplitHeading
@@ -143,7 +143,7 @@ export default function CTA() {
             </MagneticButton>
 
             <MagneticButton
-              onClick={() => scrollToId("past-events")}
+              onClick={() => scrollToId("flutter-fest")}
               strength={0.22}
               className="group inline-flex items-center gap-3 rounded-full border border-white/20 px-7 py-4 text-sm font-medium text-white/85 transition-colors duration-300 hover:border-white/50 hover:text-white"
               ariaLabel="Explore events"

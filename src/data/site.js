@@ -11,10 +11,9 @@ export const site = {
 
 export const nav = [
   { id: "about", label: "About", href: "#about" },
-  { id: "what-we-do", label: "What We Do", href: "#what-we-do" },
+  { id: "flutter-fest", label: "Events", href: "#flutter-fest" },
   { id: "team", label: "Team", href: "#team" },
   { id: "gallery", label: "Gallery", href: "#gallery" },
-  { id: "past-events", label: "Events", href: "#past-events" },
   { id: "upcoming", label: "Upcoming", href: "#upcoming" },
 ];
 
@@ -23,7 +22,6 @@ export const footerNav = [
   { id: "about", label: "About", href: "#about" },
   { id: "team", label: "Team", href: "#team" },
   { id: "gallery", label: "Gallery", href: "#gallery" },
-  { id: "past-events", label: "Past Events", href: "#past-events" },
   { id: "upcoming", label: "Upcoming Events", href: "#upcoming" },
   { id: "snapshots", label: "Snapshots", href: "#snapshots" },
 ];
@@ -36,11 +34,12 @@ export const socials = [
 
 export const sections = [
   { num: "01", id: "about", label: "Introduction" },
-  { num: "02", id: "what-we-do", label: "What We Do" },
-  { num: "03", id: "team", label: "The Team" },
-  { num: "04", id: "gallery", label: "Gallery" },
-  { num: "05", id: "past-events", label: "Past Events" },
-  { num: "06", id: "upcoming", label: "What's Next" },
-  { num: "07", id: "snapshots", label: "Snapshots" },
-  { num: "08", id: "join", label: "Join Us" },
+  { num: "02", id: "flutter-fest", label: "Flutter Fest" },
+  { num: "03", id: "buildathon", label: "Buildathon" },
+  { num: "04", id: "ml-workshop", label: "ML Workshop" },
+  { num: "05", id: "team", label: "The Team" },
+  { num: "06", id: "gallery", label: "Gallery" },
+  { num: "07", id: "upcoming", label: "What's Next" },
+  { num: "08", id: "snapshots", label: "Snapshots" },
+  { num: "09", id: "join", label: "Join Us" },
 ];

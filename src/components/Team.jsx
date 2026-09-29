@@ -38,7 +38,7 @@ export default function Team() {
       <div className="shell relative">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <SectionMeta num="03" label="The Team" />
+            <SectionMeta num="05" label="The Team" />
             <SplitHeading
               as="h2"
               id="team-title"

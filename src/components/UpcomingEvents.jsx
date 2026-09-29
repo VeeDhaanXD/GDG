@@ -47,7 +47,7 @@ export default function UpcomingEvents() {
       <div className="shell relative">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <SectionMeta num="06" label="What's Next" />
+            <SectionMeta num="07" label="What's Next" />
             <SplitHeading
               as="h2"
               id="upcoming-title"

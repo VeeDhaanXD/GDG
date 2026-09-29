@@ -1,19 +1,44 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import CustomCursor from "./components/CustomCursor";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import WhatWeDo from "./components/WhatWeDo";
+import EventSection from "./components/EventSection";
+import { eventSections } from "./data/eventSections";
 import Team from "./components/Team";
 import Gallery from "./components/Gallery";
-import PastEvents from "./components/PastEvents";
 import UpcomingEvents from "./components/UpcomingEvents";
 import Snapshots from "./components/Snapshots";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
+import IntroPage from "./pages/IntroPage";
 import { ScrollTrigger } from "./lib/gsap";
 
+const normalizePath = (pathname = "/") => {
+  const clean = pathname.split("?")[0].split("#")[0].replace(/\/+$/, "");
+  return clean === "" ? "/" : clean;
+};
+
+const ROUTES = {
+  "/api/intro": IntroPage,
+  "/intro": IntroPage,
+};
+
 export default function App() {
+  const [path, setPath] = useState(() =>
+    typeof window === "undefined" ? "/" : normalizePath(window.location.pathname),
+  );
+
+  useEffect(() => {
+    const onPop = () => setPath(normalizePath(window.location.pathname));
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [path]);
+
   useEffect(() => {
     const refresh = () => {
       if (typeof window === "undefined") return;
@@ -43,24 +68,34 @@ export default function App() {
     };
   }, []);
 
+  const RoutedPage = ROUTES[path];
+
   return (
     <>
       <CustomCursor />
-      <Navbar />
 
-      <main>
-        <Hero />
-        <About />
-        <WhatWeDo />
-        <Team />
-        <Gallery />
-        <PastEvents />
-        <UpcomingEvents />
-        <Snapshots />
-        <CTA />
-      </main>
+      {RoutedPage ? (
+        <RoutedPage />
+      ) : (
+        <>
+          <Navbar />
 
-      <Footer />
+          <main>
+            <Hero />
+            <About />
+            {eventSections.map((event, i) => (
+              <EventSection key={event.id} event={event} index={i} />
+            ))}
+            <Team />
+            <Gallery />
+            <UpcomingEvents />
+            <Snapshots />
+            <CTA />
+          </main>
+
+          <Footer />
+        </>
+      )}
 
       <div
         aria-hidden="true"

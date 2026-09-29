@@ -30,6 +30,15 @@ export function scrollToId(id, offset = 76) {
   });
 }
 
+/** Client-side navigation for the tiny pathname-based router in App.jsx. */
+export function navigateTo(path) {
+  if (typeof window === "undefined") return;
+  if (window.location.pathname === path) return;
+  window.history.pushState({}, "", path);
+  window.dispatchEvent(new PopStateEvent("popstate"));
+  window.scrollTo(0, 0);
+}
+
 /** Small helper so components can read the active section for nav indicators. */
 export function observeSections(ids, onChange) {
   if (typeof IntersectionObserver === "undefined") return () => {};

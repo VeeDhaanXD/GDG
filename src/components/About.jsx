@@ -1,6 +1,6 @@
 import SplitHeading from "./ui/SplitHeading";
 import SectionMeta from "./ui/SectionMeta";
-import { pillars } from "../data/activities";
+import { pillars } from "../data/pillars";
 import { useGsap } from "../lib/useGsap";
 import { reveal, revealHeading, expandRule, parallax, revealPillars } from "../animations/scrollAnimations";
 import { gsap } from "../lib/gsap";
