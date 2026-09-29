@@ -42,7 +42,7 @@ export default function Team() {
             <SplitHeading
               as="h2"
               id="team-title"
-              lines={["Meet the", "organisers."]}
+              lines={["Meet The", "Team"]}
               className="mt-8 font-display text-[clamp(2.1rem,5vw,4rem)] font-semibold leading-[1.03] tracking-[-0.04em] text-white"
             />
           </div>
